@@ -1,3 +1,6 @@
+# In this Fork
+* Removed lag when opening a Dialog using ngx-virtual-scroller 
+
 # Angular Icon Picker
 
 [![Build Status](https://travis-ci.org/tech-advantage/ngx-icon-picker.svg?branch=master)](https://travis-ci.org/tech-advantage/ngx-icon-picker)

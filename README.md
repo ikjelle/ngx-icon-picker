@@ -1,3 +1,6 @@
+# In this Fork
+* Removed lag when opening a Dialog using ngx-virtual-scroller 
+
 # Angular Icon Picker
 
 [![Build Status](https://travis-ci.org/tech-advantage/ngx-icon-picker.svg?branch=master)](https://travis-ci.org/tech-advantage/ngx-icon-picker)
@@ -68,7 +71,7 @@ To integrate the icon picker with an another framework, you have to use the extr
 ```
 
 ### Installing from a brand new @angular/cli project based on Bootstrap
-
+-this is more an usage example then how to do it.  
 Version of @angular/cli used is V7.3.3.
 
 * Generate a new project (here we use LESS preprocessor): `ng new myproject --style less`
@@ -95,13 +98,16 @@ Version of @angular/cli used is V7.3.3.
 @import '~bootstrap/less/bootstrap.less';
 @import '~font-awesome/less/font-awesome.less';
 @import "~@fortawesome/fontawesome-free/css/all.css"; // or less variant
+@import "~material-design-icons/iconfont/material-icons.css";
 ```
 
 ```global.scss 
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~font-awesome/css/font-awesome.min.css';
 @import "~@fortawesome/fontawesome-free/css/all.css"; // or scss variant
+@import "~material-design-icons/iconfont/material-icons.css";
 ```
+or add the corresponding stylesheet in the application
 
 * Import **IconPickerModule** in `app.module.ts` (also **CommonModule** and **ReactiveFormsModule**):
 
