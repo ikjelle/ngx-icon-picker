@@ -56,14 +56,14 @@
     padding: 5px;
   }
 
-  div.icon-grid {
+  .icon-grid {
     display: flex;
     overflow-y: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 5px;
+    margin: 5px;
 
-    div {
+    button {
       margin: 2px;
     }
   }
