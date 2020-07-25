@@ -2,8 +2,10 @@ import {Icon} from '../icon';
 import {IconsPack} from '../icons-pack';
 
 export class BootstrapIconsPack implements IconsPack {
+  public prefix = 'glyphicon glyphicon-';
+
   public getIcons(): Icon[] {
-    return [
+    return ([
       {
         id: 'asterisk',
         name: 'Asterisk'
@@ -804,6 +806,9 @@ export class BootstrapIconsPack implements IconsPack {
         id: 'tree-deciduous',
         name: 'Tree-deciduous'
       }
-    ];
+    ] as Icon[]).map(el => {
+      el.prefix = this.prefix;
+      return el;
+    });
   }
 }

@@ -7,7 +7,7 @@ import {Icon, IconType} from './icon';
   // tslint:disable-next-line: component-selector
   selector: 'icon-picker',
   templateUrl: './icon-picker.component.html',
-  styleUrls: ['./icon-picker.component.scss']
+  styleUrls: ['./icon-picker.component.scss'],
 })
 
 export class IconPickerComponent implements OnInit {
@@ -40,18 +40,17 @@ export class IconPickerComponent implements OnInit {
   public iconType = IconType;
   public buttonWidth: number;
   public buttonHeight: number;
-
+  // directives
   private directiveInstance: any;
   private initialIcon: string;
   private directiveElementRef: ElementRef;
-
+  // listeners
   private listenerMouseDown: any;
   private listenerResize: any;
 
   private dialogArrowSize = 10;
 
   @ViewChild('dialogPopup') dialogElement: any;
-
   icons: Icon[] = [];
   search = '';
 

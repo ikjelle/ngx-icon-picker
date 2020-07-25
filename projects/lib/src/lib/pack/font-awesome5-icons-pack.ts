@@ -2,8 +2,10 @@ import {Icon} from '../icon';
 import {IconsPack} from '../icons-pack';
 
 export class FontAwesome5IconsPack implements IconsPack {
+  prefix = '';
+
   public getIcons(): Icon[] {
-    return [
+    return ([
       {
         id: 'fab fa-500px',
         name: '500px',
@@ -18140,6 +18142,9 @@ export class FontAwesome5IconsPack implements IconsPack {
           'spinner'
         ]
       }
-    ];
+    ]as Icon[]).map(el => {
+      el.prefix = this.prefix;
+      return el;
+    });
   }
 }

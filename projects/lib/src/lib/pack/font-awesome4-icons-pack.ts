@@ -2,8 +2,10 @@ import {Icon} from '../icon';
 import {IconsPack} from '../icons-pack';
 
 export class FontAwesome4IconsPack implements IconsPack {
+  public prefix = 'fa fa-';
+
   public getIcons(): Icon[] {
-    return [
+    return ([
       {
         name: 'Glass',
         id: 'glass',
@@ -4788,7 +4790,10 @@ export class FontAwesome4IconsPack implements IconsPack {
         name: 'Meetup',
         id: 'meetup'
       }
-    ];
+    ] as Icon[]).map(el => {
+      el.prefix = this.prefix;
+      return el;
+    });
   }
 
 }

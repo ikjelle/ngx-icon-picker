@@ -2,8 +2,10 @@ import {Icon} from '../icon';
 import {IconsPack} from '../icons-pack';
 
 export class MaterialIconsPack implements IconsPack {
+  public prefix = 'material-icons ';
+
   public getIcons(): Icon[] {
-    return [
+    return ([
       {
         name: '3D Rotation',
         id: '3d_rotation',
@@ -3732,7 +3734,10 @@ export class MaterialIconsPack implements IconsPack {
         name: 'Zoom Out Map',
         id: 'zoom_out_map',
       },
-    ];
+    ] as Icon[]).map(el => {
+      el.prefix = this.prefix;
+      return el;
+    });
   }
 
 }
