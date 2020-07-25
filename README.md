@@ -15,7 +15,7 @@ The icon Picker manages Font Awesome, Bootstrap Glyphicon, Font Awesome 5 (5.13.
 
 ## Installing and usage
 
-   npm install ngx-icon-picker --save
+`npm install ngx-icon-picker --save`
 
 ### Load the module for your app
 
@@ -77,7 +77,8 @@ Version of @angular/cli used is V7.3.3.
 
 ```json
       "bootstrap": "3.3.7",
-      "font-awesome": "4.7.0",
+      "font-awesome": "4.7.0",   
+      "@fortawesome/fontawesome-free": "5.14.0", // free fontawesome5 package
 ```
 
   or with npm command:
@@ -85,14 +86,21 @@ Version of @angular/cli used is V7.3.3.
 ```bash
   npm install --save bootstrap@3.3.7
   npm install --save font-awesome@4.7.0
+  npm install --save @fortawesome/fontawesome-free@5.14.0
 ```
 
 * Install dependancies: `yarn install` (or `npm install`).
-* Update *styles.less* with:
-
-```less
+* Update styling:
+```styles.less
 @import '~bootstrap/less/bootstrap.less';
 @import '~font-awesome/less/font-awesome.less';
+@import "~@fortawesome/fontawesome-free/css/all.css"; // or less variant
+```
+
+```global.scss 
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.min.css';
+@import "~@fortawesome/fontawesome-free/css/all.css"; // or scss variant
 ```
 
 * Import **IconPickerModule** in `app.module.ts` (also **CommonModule** and **ReactiveFormsModule**):
