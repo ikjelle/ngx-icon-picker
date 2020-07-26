@@ -11,6 +11,7 @@
   cursor: default;
   background-color: #fff;
   user-select: none;
+  padding: 5px 0 0 5px;
 
   i {
     position: relative;
@@ -53,7 +54,11 @@
   }
 
   div.icon-search {
-    padding: 5px;
+    padding-right: 5px;
+
+    input {
+      margin-bottom: 5px;
+    }
   }
 
   .icon-grid {
@@ -61,7 +66,7 @@
     overflow-y: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 5px;
+    margin-top: 5px;
 
     button {
       margin: 2px;
