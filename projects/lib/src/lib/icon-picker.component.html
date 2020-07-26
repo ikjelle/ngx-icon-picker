@@ -13,27 +13,26 @@
     <input type="text" class="{{ipInputSearchStyleClass}}" [text] [value]="search" (newValue)="setSearch($event)"
            [placeholder]="ipPlaceHolder">
   </div>
-  <div class="icon-grid" [ngStyle]="{'max-height.px': ipMaxHeight}">
-    <div *ngFor="let icon of icons | searchIcon:search">
-      <button *ngIf="icon" class="ip-button-icon {{ipButtonStyleClass}}" type="button" title="{{ icon.name }}"
-              [ngClass]="{active : icon === selectedIcon}"
-              [style.width.px]="buttonWidth"
-              [style.height.px]="buttonHeight"
-              [style.padding-top.px]="ipIconVerticalPadding"
-              [style.padding-bottom.px]="ipIconVerticalPadding"
-              [style.padding-left.px]="ipIconHorizontalPadding"
-              [style.padding-right.px]="ipIconHorizontalPadding"
-              (click)="selectIcon(icon)">
-        <span *ngIf="icon.type === iconType.FONT_AWESEOME" class="fa fa-{{icon.id}}"
-              [style.font-size.px]="ipIconSize"></span>
-        <span *ngIf="icon.type === iconType.BOOTSTRAP" class="glyphicon glyphicon-{{icon.id}}"
-              [style.font-size.px]="ipIconSize"></span>
-        <span *ngIf="icon.type === iconType.FONT_AWESEOME5" class="{{icon.id}}"
-              [style.font-size.px]="ipIconSize"></span>
-        <span *ngIf="icon.type === iconType.MATERIAL" class="material-icons"
-              [style.font-size.px]="ipIconSize">{{icon.id}}</span>
-      </button>
-    </div>
-  </div>
-
+  <virtual-scroller #scroll [items]="icons | searchIcon:search" class="icon-grid" style="width: 100%"
+                    [ngStyle]="{'height.px': ipMaxHeight}">
+    <button *ngFor="let icon of scroll.viewPortItems"
+            class="ip-button-icon {{ipButtonStyleClass}}" type="button" title="{{ icon.name }}"
+            [ngClass]="{active : icon === selectedIcon}"
+            [style.width.px]="buttonWidth"
+            [style.height.px]="buttonHeight"
+            [style.padding-top.px]="ipIconVerticalPadding"
+            [style.padding-bottom.px]="ipIconVerticalPadding"
+            [style.padding-left.px]="ipIconHorizontalPadding"
+            [style.padding-right.px]="ipIconHorizontalPadding"
+            (click)="selectIcon(icon)">
+       <span *ngIf="icon.type === iconType.FONT_AWESEOME" class="fa fa-{{icon.id}}"
+             [style.font-size.px]="ipIconSize"></span>
+      <span *ngIf="icon.type === iconType.BOOTSTRAP" class="glyphicon glyphicon-{{icon.id}}"
+            [style.font-size.px]="ipIconSize"></span>
+      <span *ngIf="icon.type === iconType.FONT_AWESEOME5" class="{{icon.id}}"
+            [style.font-size.px]="ipIconSize"></span>
+      <span *ngIf="icon.type === iconType.MATERIAL" class="material-icons"
+            [style.font-size.px]="ipIconSize">{{icon.id}}</span>
+    </button>
+  </virtual-scroller>
 </div>
